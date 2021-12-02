@@ -1,8 +1,7 @@
-function fn(...c) {
-    if (!c.every((a) => Number.isNumber(a)))
-      throw "All arguments must be numbers.";
-    return c.reduce((a, b) => a + b);
+function addArray(...arr) {
+    if (arr.every((el) => Number.isNaN(el))) return "All arguments must be numbers.";
+    return arr.reduce((a, b) => a + b);
   }
   
-  fn(1, 2, 3); //> 6
-  fn(10, "B", 20); //> error All arguments must be numbers.
+  // console.log(addArray(1, 2, 3)); //> 6
+  console.log(addArray(10, "B", 20)); //> error All arguments must be numbers.
