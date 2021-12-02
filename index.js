@@ -1,5 +1,5 @@
 function fn(...arr) {
-    if (arr.every((el) => Number.isNaN(el))) return "All arguments must be numbers.";
+    if (arr.some((el) => Number.isNaN(Number(el)))) return "All arguments must be numbers.";
     return arr.reduce((a, b) => a + b);
   }
   
